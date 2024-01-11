@@ -8,4 +8,4 @@ Clone the repository to your local machine and follow the individual project ins
 
 ```bash
 git clone https://github.com/your-username/Y1S2-OOC-Projects.git
-cd Y1S1-IP-Projects
+cd Y1S2-OOC-Projects
