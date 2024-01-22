@@ -1,4 +1,4 @@
-# Y1S1 IP Module Test Projects
+# Y1S2 OOC Module Test Projects
 
 This repository contains a collection of test projects completed during my Y1S2 OOC module at SLIIT.
 
