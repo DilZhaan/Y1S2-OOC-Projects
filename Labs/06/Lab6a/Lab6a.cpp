@@ -1,20 +1,67 @@
-// Lab6a.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <iomanip>
+#include "Circle.h"
+#include "RectangleX.h"
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+struct Square {
+	double length;
+
+	double area() {
+		return length * length;
+	}
+};
+
+void calPerimeter(double length, double width, double& perimeter);
+double calFenceCost(double costPerUnit, double perimeter);
+
+int main(void) {
+	Circle pond;
+	RectangleX land;
+	Square building1;
+	RectangleX building2;
+
+	double input;
+	double perimeter;
+
+	cout << "Enter the Land Length : ";
+	cin >> input;
+	land.setLength(input);
+
+	cout << "Enter the Land Width : ";
+	cin >> input;
+	land.setWidth(input);
+
+	cout << "Enter the Square type Building Length : ";
+	cin >> building1.length;
+
+	cout << "Enter the Rectangle type Building Length : ";
+	cin >> input;
+	building2.setLength(input);
+
+	cout << "Enter the Rectangle type Building Width : ";
+	cin >> input;
+	building2.setWidth(input);
+
+	cout << "Enter the Pond Radius : ";
+	cin >> input;
+	pond.setRadius(input);
+
+	double GGArea = land.area() - (building1.area() + building2.area() + pond.area());
+	cout << "Grass Grown Area : " << setiosflags(ios::fixed) << setprecision(3) << GGArea << endl;
+
+	calPerimeter(land.getLength(), land.getWidth(), perimeter);
+
+	cout << "Total Fence Cost :"
+		<< setiosflags(ios::fixed) << setprecision(2) << calFenceCost(10, perimeter) << endl;
+
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+void calPerimeter(double length, double width, double& perimeter) {
+	perimeter = (length + width) * 2;
+}
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+double calFenceCost(double costPerUnit, double perimeter) {
+	return costPerUnit * perimeter;
+}
