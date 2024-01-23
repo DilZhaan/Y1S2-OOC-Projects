@@ -5,8 +5,8 @@ using namespace std;
 void findMarks(int t_marks1, int t_marks2, float& t_CA1, float& t_CA2);
 
 struct Student {
-	float mark1;
-	float mark2;
+	int mark1;
+	int mark2;
 	float CA_1;
 	float CA_2;
 };
@@ -35,8 +35,8 @@ int main()
 				setw(10) << "CA_2" << endl;
 		}
 		cout << i+1 <<
-			setw(12) << setiosflags(ios::fixed) << setprecision(0) << std1[i].mark1 <<
-			setw(10) << setiosflags(ios::fixed) << setprecision(0) << std1[i].mark2 <<
+			setw(12) << std1[i].mark1 <<
+			setw(10) << std1[i].mark2 <<
 			setw(14) << setiosflags(ios::fixed) << setprecision(2) << std1[i].CA_1 <<
 			setw(10) << setiosflags(ios::fixed) << setprecision(2) << std1[i].CA_2 << endl;
 		
